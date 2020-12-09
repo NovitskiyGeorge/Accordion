@@ -10,11 +10,11 @@ let info = [
 let accord = document.querySelector('.accord');
 let btn = document.querySelector('.btn');
 let news = document.querySelector('.accord__news');
-let btnStatus = document.querySelector('.btn__status');
+let btnStatus = document.querySelector('.btn__info__enable');
 
 btn.addEventListener('click', function() {
     let wrapper = document.createElement('div');
-    wrapper.classList.add('wrapper');
+    wrapper.classList.add('accord__news__wrapper');
 
     info.forEach(function(item) {
         wrapper.innerHTML = `<div class="title">${item.title}</div>
@@ -22,8 +22,9 @@ btn.addEventListener('click', function() {
     });
     news.append(wrapper);
 
-
-    btnStatus.classList.add('btn__status-active');
+    news.classList.add('accord__news-active');
+    btnStatus.classList.add('btn__info__enable-active');
+    btn.classList.add('btn-active');
     count++;
 });
 

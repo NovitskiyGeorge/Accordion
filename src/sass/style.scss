@@ -1,25 +1,34 @@
 .app {
-    width: 600px;
+    width: 300px;
     height: auto;
 }
-
 .accord {
     &__news {
         width: 300px;
-        height: 200px;
+        height: 0;
+        transition: all 3.3s;
+        overflow: hidden;
+        border: 1px solid black;
+        box-sizing: border-box;
+        &-active {
+            height: 200px;
+        }
     }
 }
-
 .btn {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 300px;
     height: 30px;
-    background-color: rgba($color: #0000aa, $alpha: 0.4);
+    background-color: rgba($color: #0000AA, $alpha: 0.4);
     cursor: pointer;
     box-sizing: border-box;
     padding: 0 50px 0 90px;
+    transition: all 0.3s;
+    &-active {
+        background-color: rgba($color: #00AA00, $alpha: 0.4);
+    }
     &__info {
         width: 18px;
         height: 18px;
@@ -28,27 +37,25 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 40px;       
             &__disable {
+                position: absolute;
                 display: block;
                 width: 14px;
                 height: 2px;
                 background-color: black;
                 transition: 0.3s all;
-                transform: translateX(50%);
             }
-            &__enable{
+            &__enable {
+                position: absolute;
                 display: block;
                 width: 14px;
                 height: 2px;
                 background-color: black;
                 transition: 0.3s all;
-                transform: translateX(-50%);
-            }
-                 
-        
-
+                transition: all 0.3s;                
+                &-active {
+                    transform: rotate(90deg);
+                }
+            }     
     }
-
-
 }
