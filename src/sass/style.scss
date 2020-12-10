@@ -6,10 +6,11 @@
     &__news {
         width: 300px;
         height: 0;
-        transition: all 3.3s;
+        transition: all 0.3s;
         overflow: hidden;
-        border: 1px solid black;
         box-sizing: border-box;
+        border: solid black;
+        border-width: 0 1px 1px 1px;
         &-active {
             height: 200px;
         }
